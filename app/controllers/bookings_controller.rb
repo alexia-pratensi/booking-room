@@ -1,4 +1,4 @@
-class BookingController < ApplicationController
+class BookingsController < ApplicationController
 
   def create
     @room = Room.find(params[:room_id])
@@ -31,5 +31,7 @@ class BookingController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
+
+
 
 end

@@ -1,0 +1,36 @@
+<%= link_to "← Retour", root_path, class:"text-decoration-none text-dark ms-5 " %>
+
+<div class='container mb-5'>
+
+  <%# Titre et prix %>
+  <div class="accroche">
+    <h3><%= @room.category %></h3>
+    <h4><%= @room.price %> € / nuit</h4>
+  </div>
+
+  <%# card show %>
+  <div class="card-show">
+    <%# photo %>
+    <div class="img-show">
+      <img src="<%=@room.image_url%>" style ="width: 700px; heigth: 100%">
+    </div>
+    <%# contenu textuel %>
+    <div class="text-show">
+      <h5>Description</h5>
+      <br>
+      <%=@room.description%>
+    </div>
+    <%# <% if @room.user != current_user %>
+        <div class="mt-5">
+          <%= simple_form_for [@booking] do |f|%>
+            <div class="booking-dates">
+              <%= f.input :start_date, as: :date, html5: true, label: 'De' %>
+              <%= f.input :end_date, as: :date, html5: true, label: 'à' %>
+            </div>
+            <%= f.submit 'Valider', class: "btn btn-primary"%>
+          <% end %>
+        </div>
+      <%# <%end%>
+    </div>
+  </div>
+</div>
