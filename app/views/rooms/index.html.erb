@@ -1,0 +1,43 @@
+<div class='container mb-5'>
+
+  <%# text accroche %>
+  <div class="accroche">
+    <h3>Où dormir ce soir ?</h3>
+    <h3>Trouver La chambre de votre nuit 😉</h3>
+  </div>
+
+  <%# barre de recherche %>
+  <div class="my-5 mx-auto w-50">
+    <%= form_with url: root_path, method: :get, class: "d-flex " do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control bg-white",
+        placeholder: "Trouve une chambre"
+      %>
+      <%= submit_tag "Rechercher", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <%# card offre en location %>
+  <div class="grid-card">
+    <% @rooms.each do |room| %>
+      <%# <% if room.user != current_user %>
+        <div class="card-product">
+          <div class="photo-room">
+            <%# <%if room.photo.attached? %>
+              <%# <%= cl_image_tag room.photo.key %>
+            <%# <% end %>
+            <img src="<%=room.image_url%>" style="width: 300px; heigth: 100%">
+          </div>
+          <div class="card-product-infos">
+            <h2><strong><%= room.category %></strong></h2>
+            <p><%= room.price%> €/nuit</p>
+            <p>Lits: <%= room.size %></p>
+            <%= link_to 'Voir', room_path(room), class: "btn btn-primary mt-2" %>
+          </div>
+        </div>
+      <%# <% end %>
+    <% end %>
+  </div>
+
+</div>
