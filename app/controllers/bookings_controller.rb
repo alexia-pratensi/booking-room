@@ -8,8 +8,8 @@ class BookingsController < ApplicationController
 
     if @booking.save
       redirect_to dashboard_path, notice: 'Réservation validée !'
-    # else
-    #   redirect_to room_path, notice: 'Réservation annulée !'
+    else
+      redirect_to room_path(@room), notice: 'Vous devez indiquer les dates !'
     end
   end
 
