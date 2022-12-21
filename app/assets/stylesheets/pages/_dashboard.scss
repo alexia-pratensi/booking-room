@@ -1,10 +1,19 @@
 .supprimer {
   text-decoration: none;
   font-size: 20px;
+  margin-top:35px;
+  margin-left:15px;
 }
 
-.icon-delete {
-  display: flex;
-  justify-content: right;
-  padding-right: 30px;
+// .icon-delete {
+//   display: flex;
+//   justify-content: right;
+//   padding-right: 30px;
+// }
+
+.no-booking {
+  display:flex;
+  justify-content:center;
+  margin-top: 40px;
+  flex-direction: column;
 }

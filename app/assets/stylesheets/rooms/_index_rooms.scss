@@ -2,8 +2,14 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-top: 70px;
-  margin-bottom: 70px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://res.cloudinary.com/dlumucj7m/image/upload/v1671620962/banner_j6wza3.jpg");
+  background-size: cover;
+  background-position: center;
+  color:white;
+  font-weight: bolder;
+
 }
 .photo-room {
   height: 100%;

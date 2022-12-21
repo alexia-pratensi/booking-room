@@ -14,3 +14,9 @@
 
 @import "rooms/index_rooms";
 @import "rooms/show";
+
+body {
+  display:flex;
+  flex-direction: column;
+  height: 100vh;
+}

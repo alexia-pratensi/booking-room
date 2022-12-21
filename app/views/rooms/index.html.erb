@@ -1,22 +1,22 @@
-<div class='container mb-5'>
-
   <%# text accroche %>
   <div class="accroche">
-    <h3>Où dormir ce soir ?</h3>
-    <h3>Trouver La chambre de votre nuit 😉</h3>
+    <h2>Où dormir ce soir ?</h2>
+    <h2>Trouvez La chambre de votre nuit 😉</h2>
+    <%# barre de recherche %>
+    <div class="my-5 mx-auto w-50">
+      <%= form_with url: root_path, method: :get, class: "d-flex " do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control bg-white",
+          placeholder: "Trouve une chambre"
+        %>
+        <%= submit_tag "Rechercher", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 
-  <%# barre de recherche %>
-  <div class="my-5 mx-auto w-50">
-    <%= form_with url: root_path, method: :get, class: "d-flex " do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control bg-white",
-        placeholder: "Trouve une chambre"
-      %>
-      <%= submit_tag "Rechercher", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+<div class='container mb-5'>
+
 
   <%# card offre en location %>
   <div class="grid-card">
@@ -33,7 +33,7 @@
             <h2><strong><%= room.category %></strong></h2>
             <p><%= room.price%> €/nuit</p>
             <p>Lits: <%= room.size %></p>
-            <%= link_to 'Voir', room_path(room), class: "btn btn-primary mt-2" %>
+            <%= link_to 'Plus de détails', room_path(room), class: "btn btn-primary button" %>
           </div>
         </div>
       <%# <% end %>
